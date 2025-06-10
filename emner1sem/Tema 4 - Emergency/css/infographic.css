@@ -1,0 +1,66 @@
+#head-txt {
+  fill: rgb(54, 54, 54);
+}
+.info-graphic,
+.info-text {
+  background-color: var(--info-background-color);
+  padding: 0;
+}
+.info-text h2 {
+  line-height: 3rem;
+  text-align: center;
+  background-color: var(--headline-bg-color-inverted);
+  color: var(--headline-color-inverted);
+  padding-top: 5px;
+}
+.info-text h3 {
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+.info-text > *:not(:first-child) {
+  margin: 0 clamp(1rem, 10%, 7rem);
+}
+.info-text p {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  margin: 0 0 1.2rem 0;
+  padding: 0;
+}
+
+
+
+#pan {
+  width: 100%;
+  height: 200px;
+  background-image: url("../img/soldat.svg");
+  background-size: 180px;
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+}
+
+.pan_animation {
+  animation: panorama 2s linear infinite alternate;
+}
+
+@keyframes panorama {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
+}
+
+.stop {
+  animation-play-state: paused;
+}
+
+.daily_card {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  font-family: sans-serif;
+}
+
+.daily_text {
+  padding: 1em;
+}

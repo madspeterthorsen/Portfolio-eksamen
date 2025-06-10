@@ -1,0 +1,5 @@
+<!-- mp-logo.svg -->
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="30" cy="30" r="28" stroke="white" stroke-width="4" fill="black"/>
+  <text x="50%" y="50%" text-anchor="middle" dy=".35em" font-size="20" font-family="Orbitron, sans-serif" fill="white">MP</text>
+</svg>

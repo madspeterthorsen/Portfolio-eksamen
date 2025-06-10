@@ -1,0 +1,33 @@
+#pan {
+    width: 100%;
+    height: 200px;
+    background-image: url("assets/soldat.svg");
+    background-size: 180px;
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+  }
+  
+  .pan_animation {
+    animation: panorama 5s linear infinite alternate;
+  }
+  
+  @keyframes panorama {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+  }
+  
+  .stop {
+    animation-play-state: paused;
+  }
+  
+  .daily_card {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    font-family: sans-serif;
+  }
+  
+  .daily_text {
+    padding: 1em;
+  }
+  

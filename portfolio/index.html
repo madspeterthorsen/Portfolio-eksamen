@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="intro-overlay">
+    <video id="intro-video" autoplay muted playsinline>
+      <source src="videos/Comp 1.mp4" type="video/mp4">
+    </video>
+  </div>
+
+    <header class="site-header">
+        <div class="header-inner">
+          <div class="site-logo">
+            <a href="index.html">
+            <img src="images/mplogo.svg" alt="Logo" />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="ommig.html">Om mig</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <section class="hero-section">
+        <div class="hero-grid">
+          <!-- Venstre side -->
+          <div class="hero-text">
+            <h1>Mads-Peter Thorsens Portfolio</h1>
+            <p>Mit navn er Mads-Peter, men de fleste (alle) kalder mig bare mp
+              Jeg er 27 år gammel og jeg går pt. på Multimediedesign på KEA i København.
+            Jeg har været interesset i IT i lang tid og uddanelsen her giver mig en god kombination
+            af 'hardcore' it som rendyrket kodning, samt design aspektet i brugergrænseflader og UX design.
+            Jeg er super glad for det indtil videre og denne hjemmeside er lavet med nogle af de 
+            ting jeg har lært indtil videre i værktøjskassen. 
+
+          </p>
+            <div class="hero-buttons">
+              <a href="https://kea.dk/" class="btn-primary" target="_blank">KEA</a>
+              <a href="portfolio.html" class="btn-secondary">Mine projekter på 1. semester</a>
+            </div>
+          </div>
+      
+          <!-- Højre side -->
+          <div class="hero-image">
+            <img src="./images/mp.jpg" alt="Mig der spiller smart" />
+          </div>
+        </div>
+      </section> <!-- ← VIGTIG! Luker den første section! -->
+      
+      <!-- NY SECTION starter først her -->
+      <section class="hero-section">
+        <div class="hero-grid">
+          <!-- Venstre side -->
+          <div class="hero-text">
+            <h1>Det bruger jeg min tid på!</h1>
+            <p>Mit navn er Mads-Peter, men de fleste (alle) kalder mig bare MP, hvilket mit logo har taget inspiration af.
+              I min fritid, kan jeg godt lide at dyrke sport. Primært fodbold og Basketball, og jeg
+            har også en basketball podcast som jeg har med 2 venner.
+
+            <div class="hero-buttons">
+              <a href="ommig.html" class="btn-secondary">Se mere om hvem jeg er her!</a>
+            </div>
+           <br>
+           <br>
+            <p>
+              Derudover er jeg blevet kæmpe fan af at løbe! Jeg har sat mig et mål om at løbe 300 km i juni måned, og jeg er allerede godt i gang!
+              Derfor har jeg lavet en tracker, så man kan se hvor langt jeg er nået.
+              Følg med nedenfor! &darr;
+            </p>
+
+            
+
+  
+            
+          </div>
+      
+          <!-- Højre side -->
+          <div class="hero-image">
+            <img src="./images/lob.jpg" alt="Mig der spiller smart" />
+          </div>
+        </div>
+      </section>
+
+
+      <div style="text-align: center; margin-bottom: 1rem;">
+        <button id="startButton" class="btn-primary">Start mit løb!</button>
+      </div>
+        <!-- Progress-container skal være her UDENFOR grid -->
+        <div class="progress-container">
+          <div class="progress-track"></div>
+          <div class="progress-bar"></div>
+          <div id="lottieRunner" class="runner"></div>
+          <div class="progress-standpoints">
+            <span>0 km</span>
+            <span>100 km</span>
+            <span>200 km</span>
+            <span>300 km</span>
+          </div>
+        </div>
+      
+      </section>
+    
+    
+        <!-- Lottie-web lib -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    
+        <!-- JS -->
+        <script src="../portfolio/javascript/ommig.js"></script>
+    
+      
+    <script>
+      const introVideo = document.getElementById('intro-video');
+      const introOverlay = document.querySelector('.intro-overlay');
+    
+      introVideo.onended = () => {
+        introOverlay.style.opacity = '0';
+        introOverlay.style.pointerEvents = 'none';
+        setTimeout(() => {
+          introOverlay.style.display = 'none';
+        }, 1000); // vent 1 sekund så fade-out ser pæn ud
+      };
+    </script>
+
+
+  <script src="../javascript/podcast.js"></script>
+  <script src="../javascript/logo.js"></script>
+</body>
+</html>
+

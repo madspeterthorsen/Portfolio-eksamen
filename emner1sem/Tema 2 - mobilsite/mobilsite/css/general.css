@@ -1,0 +1,588 @@
+/* === FONT IMPORT === */
+@font-face {
+    font-family: 'Cormorant';
+    src: url('../fonts/Cormorant-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cormorant Italic';
+    src: url('../fonts/Cormorant-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Cormorant', serif;
+    background-color: #f4f4f4;
+
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+nav {
+    background-color: navy;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-text h1 {
+    font-size: 32px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 40px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #0caa19;
+}
+
+.stats-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.stats-text {
+    font-size: 18px;
+}
+
+.stats-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.col {
+    background: white;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.bottom-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.bottom-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.bottom-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 15px;
+}
+
+footer {
+    background-color: navy;
+    color: white;
+    padding: 5x;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+}
+/* === RESPONSIVT DESIGN === */
+@media (max-width: 768px) {
+    /* Sørger for en ren mobilvisning */
+    .container {
+        width: 95%;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+       /* Gør navigationen til en dropdown på mobil */
+       nav ul {
+        display: flex;
+        flex-direction: column;  /* Lægger links under hinanden */
+        text-align: center;
+        gap: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+
+
+    .hero {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .stats-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-layout {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .bottom-content {
+        width: 90%;
+    }
+}
+
+.computer-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Billede: 1 del, Tekst: 2 dele */
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto; /* Sørg for luft foroven */
+    padding: 50px 20px;
+}
+
+/* H1 skal være centreret over billedet og teksten */
+.computer-layout h1 {
+    font-size: 36px;
+    grid-column: span 1; /* Sørger for, at h1 dækker hele bredden */
+    text-align: left;
+    margin-bottom: 30px; /* Giver luft under H1 */
+    margin-top: 0;
+}
+
+/* Sikrer, at billedet har en fast størrelse */
+.computer-image img {
+    max-width: 100%;
+    height: auto;
+    width: 550px; /* Sæt en max-bredde så det ikke fylder hele skærmen */
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* Tekst-sektionen */
+.computer-text h1 {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.computer-text h2 {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.computer-text p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+
+@media (max-width: 768px) {
+    .computer-layout {
+        grid-template-columns: 1fr; /* Skifter til én kolonne på mobil */
+        text-align: center;
+    }
+
+    .computer-layout h1 {
+        font-size: 32px;
+        margin-bottom: 30px; /* Giver luft under H1 */
+    }
+
+    .computer-text h2 {
+        font-size: 24px;
+    }
+
+    .computer-text p {
+        font-size: 18px;
+    }
+
+    /* Billedet bliver mindre på mobil */
+    .computer-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+/* Standard mobil-visning først */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Starter med én kolonne til mobil */
+    gap: 40px;
+    width: 90%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+/* Elementernes placering i mobil-visning */
+.grid-item-1 {
+    text-align: center;
+}
+
+.responsive-img {
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Tekst styling mobil først */
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* --- Breakpoint: større skærme --- */
+@media (min-width: 769px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr; /* To kolonner til større skærme */
+        max-width: 1200px;
+        align-items: start;
+        text-align: left;
+    }
+
+    /* Placeringer til desktop */
+    .grid-item-1 {
+        grid-column: 1 / span 2;
+        font-size: 36px;
+    }
+
+    .grid-item-2 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .grid-item-3 {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: center;
+    }
+
+    .grid-item-4 {
+        grid-column: 1;
+        grid-row: 3;
+        align-self: center;
+    }
+
+    .grid-item-5 {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .grid-item-6 {
+        grid-column: 2;
+        grid-row: 4;
+        align-self: center;
+    }
+
+    .grid-item-7 {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+/* === Mobil først === */
+.components-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Starter med én kolonne til mobil */
+    gap: 20px;
+    width: 90%;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.component-title {
+    font-size: 28px;
+    text-align: center;
+}
+
+/* Billeder (mobil) */
+.responsive-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* Tekst (mobil først) */
+h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+@media (min-width: 769px) {
+    .components-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(9, auto); /* Masser af plads til alt */
+        max-width: 1200px;
+        margin: 50px auto;
+    }
+
+    .component-title {
+        grid-column: 1 / span 3;
+        grid-row: 1;
+        text-align: center;
+        font-size: 36px;
+    }
+
+    /* Billeder */
+    .component-img-1 { grid-column: 1; grid-row: 2; }
+    .component-img-2 { grid-column: 2; grid-row: 2; }
+    .component-img-3 { grid-column: 3; grid-row: 2; }
+
+    /* Tekst om GPU og RAM */
+    .component-text-1 { grid-column: 1; grid-row: 3; }
+    .component-text-2 { grid-column: 1; grid-row: 4; }
+
+    /* Tekst om køling */
+    .component-text-3 { grid-column: 2; grid-row: 3; }
+    .component-text-4 { grid-column: 2; grid-row: 4; }
+    .component-text-5 { grid-column: 2; grid-row: 5; }
+    .component-text-6 { grid-column: 2; grid-row: 6; }
+    .component-text-7 { grid-column: 2; grid-row: 7; }
+
+    /* Tekst om motherboard */
+    .component-text-8 { grid-column: 3; grid-row: 3; }
+    .component-text-9 { grid-column: 3; grid-row: 4; }
+
+    /* Flere billeder nederst */
+    .component-img-4 { grid-column: 1; grid-row: 8; }
+    .component-img-5 { grid-column: 2; grid-row: 8; }
+    .component-img-6 { grid-column: 3; grid-row: 8; }
+}
+
+
+/* ========================== */
+/* Galleri - Layout */
+/* ========================== */
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    align-items: center;
+}
+
+/* Tekst-sektion */
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+    margin-top: 70px;
+}
+
+.gallery-header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.gallery-header h2 {
+    font-size: 28px;
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.gallery-description {
+    text-align: left;
+    max-width: 65ch;
+    margin: 0 auto 30px auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Grid-positionering af billeder */
+.gallery-item-1 {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 140%;
+    height: auto;
+}
+
+.gallery-item-2 {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+}
+
+.gallery-item-3 {
+    grid-column: 3;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+}
+
+.gallery-item-4 {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    width: 100%;
+    height: auto;
+}
+
+.gallery-item-5 {
+    grid-column: 1;
+    grid-row: 3;
+    width: 60%;
+    height: auto;
+}
+
+.gallery-item-6 {
+    grid-column: 2 / 4;
+    grid-row: 3;
+    width: 100%;
+    height: auto;
+}
+
+.gallery-item-6 img {
+    width: 140px;
+    height: auto;
+}
+
+
+@media (max-width: 768px) {
+    .gallery-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallery-description {
+        text-align: center;
+    }
+
+    .gallery-container img {
+        width: 100%;
+    }
+}
