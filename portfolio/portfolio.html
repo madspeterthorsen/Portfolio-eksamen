@@ -1,43 +1,71 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest"/>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
+  <title>Portfolio-Website</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-    <header class="site-header">
-        <div class="header-inner">
-          <div class="site-logo">
-            <a href="index.html">
-            <img src="images/mplogo.svg" alt="Logo" />
-          </div>
-          <nav>
-            <ul>
-              <li><a href="ommig.html">Om mig</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
+  <header class="site-header">
+    <div class="header-inner">
+  
+      <div class="site-logo">
+        <a href="index.html">
+          <img src="images/mplogo.svg" alt="Logo" />
+        </a>
+      </div>
+  
+      <!-- Normal menu (desktop) -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="ommig.html">Om mig</a></li>
+        </ul>
+      </nav>
+  
+      <!-- Burger menu (mobil) -->
+      <div class="burger-menu" id="burgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  
+    </div> <!-- SLUT på .header-inner -->
+  
+   <!-- Burger navigation (hidden by default) -->
+   <nav class="burger-nav" id="burgerNav">
+    <ul>
+      <li><a href="index.html">Forside</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="ommig.html">Om mig</a></li>
+    </ul>
+  </nav>
+  
+  </header> <!-- SLUT på header -->
       <section class="portfolio-section">
 
         <div class="portfolio-item">
             <div class="portfolio-text">
               <h2>Tema 2 - Grundlæggende web
-                <br>Mobilsite
               </h2>
-              <p>Dette projekt var et interaktivt webmagasin udviklet som en del af vores tredje semester på KEA. 
-                Vi arbejdede i teams på fire personer, hvor jeg havde ansvar for frontend-udviklingen og designet. 
-                Vi brugte Figma til at udarbejde wireframes og prototyper, som efterfølgende blev implementeret i HTML, CSS og JavaScript. 
-                Magasinet bestod af flere sektioner med interaktivitet i dybden.
+              <p>Dette var vores første rigtige projekt på multimediedesigneruddannelsen. Vi fik udleveret alt indholdet og skulle bygge et website fra bunden — først til mobil, derefter til desktop. Opgaven indebar strukturering af HTML, responsivt design og upload til eget domæne.
+                Hjemmesiden bestpr af 5 html sider, og en css side.
+                Der blev også udleveret layout diagrammer, så kravene var sat, og  vi skulle bare kode, uden at designe alverden til hjemmesiden. 
+
+
               </p>
               <div class="portfolio-buttons">
-                <a href="../emner1sem/Tema 2 - mobilsite/mobilsite/index.html" class="btn-primary">Se Projekt</a>
-                <a href="#" class="btn-secondary">Se min process</a>
+                <a href="../emner1sem/mobilsite/index.html" class="btn-primary">Se Projekt</a>
+                <a href="../portfolio/temaer/tema2.html" class="btn-secondary">Se min process</a>
               </div>
             </div>
           
@@ -52,10 +80,10 @@
             <h2>Tema 3 - Grundlæggende UX UI
                 <br>Emnesite
             </h2>
-            <p>Beskrivelse af projektet. Hvad du lavede, teknologi du brugte osv.</p>
+            <p>I dette tema vi mere frihed til selv at vælge emne og indhold. Jeg valgte at lave en hjemmeside, der skulle hjælpe folk i Københavnsområdet med at finde streetbasketbaner. Jeg implementerede et kort og lavede sider for udvalgte baner, hvor man kunne læse om dem og idéen var, at man også kunne se reviews m.m. Sitet blev udviklet fra idé og prototype i Figma til færdigt kodet site.</p>
             <div class="portfolio-buttons">
-              <a href="../emner1sem/Tema 3 - Emnesite/index.html" class="btn-primary">Se Projekt</a>
-              <a href="#" class="btn-secondary">Se min process</a>
+              <a href="../emner1sem/tema3/index.html" class="btn-primary">Se Projekt</a>
+              <a href="../portfolio/temaer/tema3.html" class="btn-secondary">Se min process</a>
 
             </div>
           </div>
@@ -66,13 +94,13 @@
       
         <div class="portfolio-item">
           <div class="portfolio-text">
-            <h2>Tema 3 - Grundlæggende Animation
+            <h2>Tema 4 - Grundlæggende Animation
                 <br>Emergency site
             </h2>
-            <p>Beskrivelse af projektet. Hvad du lavede, teknologi du brugte osv.</p>
+            <p>Til dette tema valgte jeg at lave et emergency site om en (fiktiv) borgerkrig mellem Sjælland og Jylland. Konflikterne spænder fra for dyrt bagværk til hvorvidt Håndbold er værd at se eller ej.
             <div class="portfolio-buttons">
-              <a href="../emner1sem/Tema 4 - Emergency/index.html" class="btn-primary">Se Projekt</a>
-              <a href="#" class="btn-secondary">Se min process</a>
+              <a href="../emner1sem/tema4/index.html" class="btn-primary">Se Projekt</a>
+              <a href="../portfolio/temaer/tema4.html" class="btn-secondary">Se min process</a>
 
             </div>
           </div>
@@ -83,13 +111,13 @@
       
         <div class="portfolio-item">
           <div class="portfolio-text">
-            <h2>Tema 5 - Grundlæggende indhold
-                <br>Virksomhedssite
+            <h2>Tema 5 - Grundlæggende indhold -Virksomhedssite
             </h2>
-            <p>Beskrivelse af projektet. Hvad du lavede, teknologi du brugte osv.</p>
+            <p>Dette var årets første gruppearbejde. Min gruppe arbejde med OS - Perfomance center.
+              En personlig træner i Nordhavn. Læs mere om det her &darr; </p>
             <div class="portfolio-buttons">
-                <a href="../emner1sem/Tema 5 - Virksomhedssite/index.html" class="btn-primary">Se Projekt</a>
-                <a href="#" class="btn-secondary">Se min process</a>
+              <a href="../emner1sem/tema5/index.html" class="btn-primary">Se Projekt</a>
+              <a href="../portfolio/temaer/tema5.html" class="btn-secondary">Se min process</a>
 
             </div>
           </div>
@@ -99,5 +127,34 @@
         </div>
       
       </section>
+
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+      
+          <!-- Venstre side → Kontakt -->
+          <div class="footer-contact">
+            <p>Kontakt: <a href="mailto:mads94m8@stud.kea.dk">mads94m8@stud.kea.dk</a></p>
+          </div>
+      
+          <!-- Højre side → Social icons -->
+          <div class="footer-socials">
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
+      
+        </div>
+      </footer>
+    
+
+      <script src="./javascript/burger.js"></script>
+
       
 <body>

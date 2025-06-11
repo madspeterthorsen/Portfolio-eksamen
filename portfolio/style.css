@@ -1,43 +1,45 @@
-*{
+/* Reset → fjerner margin/padding på ALT og sætter box-sizing til border-box */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Importerer de 3 skrifttyper jeg bruger → Oswald, Poppins, Garamond */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap');
 
-
-
+/* BODY → sætter baggrund, font, farve og forhindrer horisontal scroll */
 body {
-  min-height: 100vh;
-  background: linear-gradient(40deg, hsla(44, 26%, 47%, 1) 5%, hsla(0, 0%, 0%, 1) 100%);
-  font-family: 'Oswald', sans-serif;
-  color: white;
-
+    min-height: 100vh;
+    background: linear-gradient(40deg, hsla(44, 26%, 47%, 1) 5%, hsla(0, 0%, 0%, 1) 100%);
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    overflow-x: hidden; /* vigtigt → så kommer der ikke uønsket scroll til højre */
+    max-width: 100vw;
 }
 
-
+/* INTRO OVERLAY → video intro i sort overlay, centreret */
 .intro-overlay {
-  position: fixed;
-  inset: 0;
-  background-color: black;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 1s ease;
+    position: fixed;
+    inset: 0;
+    background-color: black;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease;
 }
 
+/* INTRO VIDEO → skaler video til at fylde pænt, ikke for stort */
 .intro-overlay video {
-  max-width: 60%;
-  max-height: 60vh;
-  object-fit: contain;
+    max-width: 60%;
+    max-height: 60vh;
+    object-fit: contain;
 }
 
-
-
+/* HEADER → fast top, transparent baggrund + tynd linje nederst */
 .site-header {
     width: 100%;
     top: 0;
@@ -46,58 +48,62 @@ body {
     border-bottom: 1px solid rgba(255,255,255,0.5);
 }
 
-
+/* HEADER-INDHOLD → flex layout: logo left, nav right */
 .header-inner {
-    margin: 0 auto; /* centrerer det på siden */
-    padding: 2rem 5rem; /* samme som hero-section */
+    margin: 0 auto;
+    padding: 2rem 5rem; /* matcher hero section */
     display: flex;
-    justify-content: space-between; /* logo left, nav right */
+    justify-content: space-between;
     align-items: center;
 }
 
-/* LOGO */
+/* LOGO → lille rotation når man hover */
 .site-logo img {
     width: 70px;
     height: 70px;
     display: block;
     cursor: pointer;
     transition: 0.8s ease;
-  }
-
-  .site-logo img:hover {
-    transform: rotate(360deg); /* nu snorter det hele vejen rundt */
 }
-  
-  .header-inner nav ul {
-    list-style: none; 
-    display: flex; /* gør så li ligger horisontalt */
-    gap: 2rem; /* afstand mellem li links */
-    padding: 0; 
-    margin: 0; 
-  }
 
+.site-logo img:hover {
+    transform: rotate(360deg); /* sjov rotation effekt */
+}
 
-  
-  .header-inner nav a {
+/* MENU LISTE → fjern bullets, gør items horisontale, mellemrum imellem */
+.header-inner nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* MENU LINKS → gør dem til pæne knapper med hover-effekt */
+.header-inner nav a {
     text-decoration: none;
     color: white;
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
     font-size: 1.2rem;
-    transition: 
-      color 0.3s ease, 
-      transform 0.3s ease, 
-      letter-spacing 0.3s ease;
-
-  }
-  
-  .header-inner nav a:hover {
-    color: #BFA473; /* gold hover */
-    transform: scale(1.08);
-    letter-spacing: 2px; /* bogstaver "spredes" lidt */
+    padding: 0.5rem 1rem; /* tilføjer plads omkring teksten → ligner knap */
+    border-radius: 8px; /* bløde hjørner */
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        letter-spacing 0.3s ease;
 }
 
-  
+/* MENU HOVER → guld baggrund + hvid tekst + lille zoom + spacing */
+.header-inner nav a:hover {
+    background-color: #a68b5e; /* guld baggrund */
+    color: #ffffff; /* hvid tekst */
+    transform: scale(1.05); /* lille zoom effekt */
+    letter-spacing: 1px; /* let spacing */
+}
+
+
 .hero-section {
     padding: 4rem 5rem;
   }
@@ -343,17 +349,18 @@ body {
 .hero-visualizer h3 {
   font-family: 'Oswald', sans-serif;
   margin-top: 1rem;
-  margin-bottom: 0.8rem; /* giver fin luft ned til boksen */
+  margin-bottom: 0.8rem; /* giver  luft ned til boksen */
   font-size: 1.2rem;
 }
 
 .visualizer-container {
   position: relative;
   width: 400px;
-  height: 300px; /* ikke for høj - 400x400 bliver pæn cirkel */
+  height: 300px; /* - 400x400 bliver pæn cirkel */
 }
 
 #audio-visualizer {
+  /* Denne fylder hele skærmen, men er gennemsigtig og lader mig se tingene under */
   position: absolute;
   top: 0;
   left: 0;
@@ -361,10 +368,11 @@ body {
   height: 100%;
   background-color: transparent;
   z-index: 1;
-  pointer-events: none;
+  pointer-events: none; /* Så man stadig kan klikke på ting under visualizeren */
 }
 
 .visualizer-logo {
+  /* Logoet bliver centreret midt på skærmen, både lodret og vandret */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -373,94 +381,104 @@ body {
   z-index: 2;
 }
 
-/* Kontrol knapper */
+/* Kontrol knapper til at starte og stoppe optagelse */
 #record-button, #stop-record-button {
-  padding: 0.8rem 1.5rem;
-  font-family: 'Oswald', sans-serif;
+  padding: 0.8rem 1.5rem; /* Gør knapperne lidt større */
+  font-family: 'Oswald', sans-serif; /* Samme font som resten af sitet */
   font-size: 2rem;
   margin-bottom: 2rem;
-  font-size: 1.1rem;
-  background-color: #BFA473;
-  color: #ffffff;
+  font-size: 1.1rem; /* Så knappen ikke bliver for voldsom */
+  background-color: #BFA473; /* Guld-ish farve til knapper */
+  color: #ffffff; /* Hvid tekst */
   border: none;
-  border-radius: 6px;
+  border-radius: 6px; /* Lidt rundede hjørner */
   cursor: pointer;
-  z-index: 3;
+  z-index: 3; /* Så knappen ligger over visualizeren */
 }
 
 #record-button:hover, #stop-record-button:hover {
+  /* Lidt mørkere farve når man holder musen over knappen */
   background-color: #a68b5e;
 }
 
 #audio-playback {
+  /* Lydafspilleren skal ikke være bredere end 350px */
   width: 100%;
   max-width: 350px;
 }
 
+/* Mobil layout - her justereres når skærmen er mindre end 768px */
 @media (max-width: 768px) {
+
   .header-inner {
-    padding: 1rem;
-    flex-direction: column;
+    /* Logo til venstre og burger menu til højre */
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    padding: 2rem 1rem; /* Lidt luft rundt om headeren */
   }
 
   .header-inner nav ul {
+    /* Når menu vises, skal punkterne stå lodret under hinanden */
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.5rem; /* Lidt luft mellem menupunkterne */
   }
 
   .hero-section {
+    /* Lidt luft rundt om hero sektionen på mobil */
     padding: 2rem 1rem;
   }
 
   .hero-grid {
+    /* Kun én kolonne på mobil */
     grid-template-columns: 1fr;
   }
 
-    .hero-text {
-      margin: 0 auto; /* centrer containeren */
-      max-width: 600px; /* god bredde til læsning */
-      text-align: center; 
-    }
-  
-    .hero-text p {
-      line-height: 1.8; /* mere linjeafstand */
-      margin: 0 auto 2rem auto; /* luft under p, centrer container */
-      max-width: 600px;
-      text-align: center;
-    }
-  
-    .hero-buttons {
-      justify-content: center; 
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-
-
-  
+  .hero-text {
+    /* Tekstblokken i hero centreres og ikke blive alt for bred */
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
   }
 
-/* MEDIA QUERY → mobile: én kolonne */
+  .hero-text p {
+    /* Giver linjeafstand og centrering på mobil */
+    line-height: 1.8;
+    margin: 0 auto 2rem auto;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .portfolio-section {
+    padding: 2rem 1rem; /* Mindre padding på mobil, som hero-section */
+  }
+
   .portfolio-item {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-
+    padding: 0; /* Ingen ekstra padding her - styres af section */
   }
 
   .portfolio-text {
-    margin: 0 auto; /* centrer containeren */
-    max-width: 600px; /* god bredde til læsning */
-    text-align: center; 
+    padding: 0; /* Ingen ekstra padding - styres af section */
+    text-align: center;
+    max-width: 100%; /* Bruger hele bredden */
+    margin: 0; /* Fjerner auto centring */
   }
 
   .portfolio-text p {
-    line-height: 1.8; /* mere linjeafstand */
-    margin: 0 auto 2rem auto; /* luft under p, centrer container */
-    max-width: 600px;
+    line-height: 1.8;
+    margin: 0 0 2rem 0;
     text-align: center;
   }
 
@@ -474,6 +492,7 @@ body {
   .portfolio-image img {
     margin-top: 0;
   }
+}
 
 
   .hero-visualizer {
@@ -501,45 +520,283 @@ body {
     font-size: 1rem;
     padding: 0.6rem 1.2rem;
   }
-}
 
 
-
-@media (max-width: 767px) {
-  .intro-overlay video {
-    max-width: 90%;
-    max-height: 50vh;
+  @media (max-width: 767px) {
+    /* Video overlay skal ikke fylde hele mobilen */
+    .intro-overlay video {
+      max-width: 90%;
+      max-height: 50vh; /* højden på max halv skærm */
+    }
+  
+    /* Hero billede - ingen ekstra top-margin på mobil */
+    .hero-image img {
+      margin-top: 0;
+    }
+      
+    .progress-container {
+      overflow: hidden; /* Tvinger progressbar til at holde sig inde i containeren */
+      padding: 0 1rem; /* Lidt luft i siderne */
+      margin: 3rem auto; /* God luft over/under progressbar */
+    }
+  
+    /* Sørger for at der ikke er horisontal scroll på mobil */
+    .html, body {
+      overflow-x: hidden;
+      max-width: 100vw; /* Sikrer at vi ikke overskrider viewporten */
+    }
+  
+    /* Justeringer af progressbar dele på mobil */
+    .progress-track {
+      top: 30px;
+      height: 14px;
+    }
+  
+    .progress-bar {
+      top: 30px;
+      height: 14px;
+    }
+  
+    /* Runner bliver større og placeres korrekt */
+    .runner {
+      width: 50px;
+      height: 50px;
+      top: calc(30px + 7px);
+      transform: translate(0, -50%) scale(2); /* Skalerer op 2x */
+      will-change: transform; /* Hint til Safari - gør det hurtigere */
+    }
+  
+    /* Standpoints tekst - mindre font på mobil */
+    .progress-standpoints {
+      top: 55px;
+      font-size: 12px;
+    }
   }
-  .hero-image img {
-    margin-top: 0;
+  
+  /* BURGER MENU */
+  
+  /* Starter skjult som default (desktop view) */
+  .burger-menu {
+    display: none;
+    flex-direction: column; /* Tre linjer i menu */
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer; /* Viser hånd når man hover */
   }
-    
-.progress-container {
-  margin: 3rem auto;
-  padding: 0 1rem;
-  height: 80px;
+  
+  .burger-menu span {
+    display: block;
+    height: 3px;
+    background-color: white; /* Linjerne er hvide */
+    border-radius: 2px; /* Lidt afrundede hjørner */
+  }
+  
+  /* BURGER NAVIGATION - skjult fra start */
+  .burger-nav {
+    position: fixed; /* Dækker hele skærmen når åben */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.95); /* Mørk overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%); /* Skjult til venstre */
+    transition: transform 0.3s ease; /* Glider ind/ud */
+    z-index: 999;
+  }
+  
+  /* Når vi tilføjer .open class, kommer menuen ind */
+  .burger-nav.open {
+    transform: translateX(0); /* Viser menu */
+  }
+  
+  /* Fjerner bullets på listen */
+  .burger-nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Lidt luft mellem hvert menupunkt */
+  .burger-nav li {
+    margin: 1rem 0;
+  }
+  
+  /* Styling af links i burger menu */
+  .burger-nav a {
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+  }
+  
+  /* Mobil view - viser burger, skjuler normal menu */
+  @media (max-width: 768px) {
+    /* Viser burger menu */
+    .burger-menu {
+      display: flex;
+      margin-left: auto; /* Skubber burgeren ud til højre */
+    }
+  
+    /* Skjuler normal nav menu */
+    .header-inner nav {
+      display: none;
+    }
+  }
+  
+
+
+/* === Process sektion til læringsmål + moodboard === */
+.process-section {
+  padding: 4rem 5rem; /* God luft rundt om hele sektionen */
 }
 
-.progress-track {
-  top: 30px;
-  height: 14px;
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 kolonner - tekst + moodboard */
+  gap: 4rem; /* afstand mellem kolonner */
+  align-items: start; /* starter øverst i kolonnerne */
 }
 
-.progress-bar {
-  top: 30px;
-  height: 14px;
+.process-intro h2 {
+  font-size: 1rem; /* lille overskrift */
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
-.runner {
-  width: 50px;
-  height: 50px;
-  top: calc(30px + 7px);
-  transform: translate(0, -50%) scale(2);
+.process-intro p {
+  font-size: 1.1rem; /* lidt større tekst så det er letlæseligt */
+  line-height: 1.6; /* god linjeafstand */
 }
 
-.progress-standpoints {
-  top: 55px;
-  font-size: 12px;
-}
+.process-learnings h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
+/* Læringsmål liste */
+.process-learnings ul {
+  list-style-type: disc; /* almindelige bullets */
+  padding-left: 1.5rem; /* lidt indrykning */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 3rem; /* luft under listen */
+}
+
+.process-learnings li {
+  margin-bottom: 1.3rem; /* luft mellem de enkelte punkter */
+}
+
+/* Moodboard sektion */
+.process-moodboard {
+  margin-top: 2rem; /* Lidt luft over moodboardet */
+}
+
+/* Grid til moodboard billeder */
+/* auto-fit gør at grid tilpasser sig skærmens bredde */
+.moodboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* minimum 200px, ellers fyld pladsen ud */
+  gap: 1rem; /* luft mellem billederne */
+}
+
+/* Moodboard billeder */
+.moodboard-grid img {
+  margin-top: 2rem; /* Lidt luft over billedet */
+  width: 100%; /* Fylder hele kolonnebredden */
+  height: auto; /* Holder proportioner */
+  object-fit: cover; /* Beskærer billedet pænt så det ikke forvrænges */
+  border-radius: 15px; /* Runde hjørner */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Blød skygge bag billedet */
+}
+
+@media (max-width: 768px) {
+  .process-section {
+    padding: 2rem 1rem; /* Mindre padding, ligesom hero-section */
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr; /* kun 1 kolonne på mobil */
+    gap: 2rem;
+  }
+
+  .process-intro, .process-learnings {
+    text-align: center; /* Centrerer teksten på mobil */
+    max-width: 100%; /* Fjern evt. fixed max-width */
+    margin: 0; /* Fjern auto centring */
+    padding: 0 1rem; /* Sikrer luft i siderne */
+  }
+
+  .moodboard-grid {
+    grid-template-columns: 1fr; 
+    gap: 1rem;
+  }
+
+  .moodboard-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: block;
+    box-sizing: border-box;
+  }
+}
+/* === Footer → basic layout === */
+.site-footer {
+  border-top: 1px solid rgba(255,255,255,0.5); /* Tynder streg i toppen */
+  padding: 2rem 5rem; /* Luft inde i footer */
+  background-color: transparent; /* Footer er gennemsigtig */
+  color: white; /* Hvid tekst */
+  font-family: 'Oswald', sans-serif; /* Samme font som resten af siden */
+  font-size: 0.9rem; /* Lidt mindre tekst */
+}
+
+.footer-inner {
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Indhold ud til hver side */
+  align-items: center; /* Centrerer indhold vertikalt */
+  flex-wrap: wrap; /* Så det kan bryde om på mobil */
+}
+
+.footer-contact p a {
+  color: #ffffff;
+  text-decoration: none; /* Fjerner understregning */
+}
+
+.footer-contact p a:hover {
+  text-decoration: underline; /* Understregning ved hover */
+}
+
+/* Footer ikoner → fjerner streg under ikonerne */
+.footer-socials a {
+  color: white; /* Hvid ikonfarve */
+  margin-left: 1.5rem; /* Luft mellem ikonerne */
+  font-size: 1.8rem; /* Gør ikonerne store */
+  transition: color 0.3s ease, transform 0.2s ease; /* Smooth overgang ved hover */
+  text-decoration: none; /* Fjerner de små streger under ikonerne */
+}
+
+.footer-socials a:hover {
+  color: #BFA473; /* Guld-farve ved hover */
+  transform: scale(1.1); /* Lille zoom-effekt når man hover */
+}
+
+/* === Footer → Mobile version === */
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column; /* Footer ting står ovenpå hinanden på mobil */
+    align-items: center; /* Centrerer footer indhold */
+    gap: 1rem; /* Luft mellem elementerne */
+  }
+
+  .footer-socials a {
+    margin-left: 0; /* Fjerner venstre margin så ikonerne står centreret */
+    margin-right: 1rem; /* Lidt luft mellem ikonerne */
+  }
+}

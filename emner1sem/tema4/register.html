@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/infographic.css" />
+    <link rel="stylesheet" href="css/forms.css" />
+    <link rel="icon" type="image/png" href="img/fav.png" />
+    <title>Emergency Site</title>
+  </head>
+  <body id="register">
+    <header>
+      <nav>
+        <div id="logotype-wrapper">
+          <a href="index.html"> LOGOTYPE </a>
+        </div>
+        <ul class="menu">
+          <li><a class="menuItem" href="instruction.html">Nærkontakt </a></li>
+          <li><a class="menuItem" href="register.html">Indberet</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>INDBERET</h1>
+      <section id="webform">
+        <label for="name">Navn</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="region">Hvor bor du?</label>
+          <select id="region" name="region" required>
+          <option value="">-- Vælg --</option>
+          <option value="sjælland">Sjælland</option>
+          <option value="jylland">Jylland</option>
+          <option value="fyn">Fyn</option>
+        </select>
+
+        <label for="bollepris">Makspris for fastelavnsbolle (kr.)</label>
+        <input type="number" id="bollepris" name="bollepris" min="0" max="200">
+
+
+        <label for="lædersofa">Har du lædersofa?</label>
+          <select id="lædersofa" name="lædersofa">
+            <option value="">-- Vælg --</option>
+            <option value="ja">Ja</option>
+            <option value="nej">Nej</option>
+            <option value="overvejer">Overvejer</option>
+          </select>
+
+        <label for="sport">Foretrukne sportsgrene?</label><br>
+            <input type="checkbox" name="sport" value="fodbold"> Fodbold<br>
+            <input type="checkbox" name="sport" value="håndbold"> Håndbold<br>
+            <input type="checkbox" name="sport" value="curling"> Curling<br>
+            <input type="checkbox" name="sport" value="ingen"> Ingen sport<br>
+
+
+          <label for="kommentar">Dine tanker om konflikten?</label><br>
+            <textarea id="kommentar" name="kommentar" rows="4" cols="50"></textarea>
+
+
+          <label for="fyn-slider" id="fyn-label"> Som fynbo, hvem støtter du mest?</label>
+            <div class="range-wrapper">
+              <span>Jylland</span>
+              <input type="range" id="fyn-slider" name="fyn-slider" min="0" max="100" value="50" />
+              <span>Sjælland</span>
+            </div>
+
+          <button type="submit">Indsend</button>
+
+      </section>
+
+      <section id="summary"></section>
+      
+
+    </main>
+
+    <footer>
+      <nav class="some">
+        <ul>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+        </ul>
+      </nav>
+      <nav class="another">
+        <ul>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+        </ul>
+      </nav>
+      <nav class="yetanother">
+        <ul>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+          <li><a href="">link</a></li>
+        </ul>
+      </nav>
+    </footer>
+    <!-- <script src="js/main.js"></script> -->
+    <script src="js/burger.js"></script>
+  </body>
+</html>

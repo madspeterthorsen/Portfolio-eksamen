@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
+  
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest"/>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Portfolio-Website</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
@@ -13,33 +21,59 @@
       <source src="videos/Comp 1.mp4" type="video/mp4">
     </video>
   </div>
+  <header class="site-header">
+    <div class="header-inner">
+  
+      <div class="site-logo">
+        <a href="index.html">
+          <img src="images/mplogo.svg" alt="Logo" />
+        </a>
+      </div>
+  
+      <!-- Normal menu (desktop) -->
+      <nav>
+        <ul>
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="ommig.html">Om mig</a></li>
+        </ul>
+      </nav>
+  
+      <!-- Burger menu (mobil) -->
+      <div class="burger-menu" id="burgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  
+    </div> <!-- SLUT på .header-inner -->
+ 
+    <!-- Burger navigation (hidden by default) -->
+    <nav class="burger-nav" id="burgerNav">
+      <ul>
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="ommig.html">Om mig</a></li>
+      </ul>
+    </nav>
 
-    <header class="site-header">
-        <div class="header-inner">
-          <div class="site-logo">
-            <a href="index.html">
-            <img src="images/mplogo.svg" alt="Logo" />
-          </div>
-          <nav>
-            <ul>
-              <li><a href="ommig.html">Om mig</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
 
+
+  </header> <!-- SLUT på header -->
+
+  
       <section class="hero-section">
         <div class="hero-grid">
           <!-- Venstre side -->
           <div class="hero-text">
             <h1>Mads-Peter Thorsens Portfolio</h1>
-            <p>Mit navn er Mads-Peter, men de fleste (alle) kalder mig bare mp
-              Jeg er 27 år gammel og jeg går pt. på Multimediedesign på KEA i København.
-            Jeg har været interesset i IT i lang tid og uddanelsen her giver mig en god kombination
-            af 'hardcore' it som rendyrket kodning, samt design aspektet i brugergrænseflader og UX design.
-            Jeg er super glad for det indtil videre og denne hjemmeside er lavet med nogle af de 
-            ting jeg har lært indtil videre i værktøjskassen. 
+            <p>Mit navn er Mads-Peter, jeg er 27 år gammel og går på Multimediedesign på KEA i København.
+            Jeg er super glad for det og denne hjemmeside er lavet med nogle af de mange forskelige ting 
+            jeg har lært fra det først halve år på KEA.            <br><br>
+      
+            Sitet her har til opgave at vise hvem jeg er og hvad jeg har lært på det første semester.
+            Der er alt fra HTML og CSS koden til Illustrator illustrationer og Javascript, på hjemmesiden her. 
+            Tag et kig på mine projekter eller scroll ned og følg med i mit løbeprojekt. &darr;
 
           </p>
             <div class="hero-buttons">
@@ -61,9 +95,9 @@
           <!-- Venstre side -->
           <div class="hero-text">
             <h1>Det bruger jeg min tid på!</h1>
-            <p>Mit navn er Mads-Peter, men de fleste (alle) kalder mig bare MP, hvilket mit logo har taget inspiration af.
+            <p>De fleste (alle) kalder mig bare MP, hvilket mit logo har taget inspiration af.
               I min fritid, kan jeg godt lide at dyrke sport. Primært fodbold og Basketball, og jeg
-            har også en basketball podcast som jeg har med 2 venner.
+            har også en basketball podcast som laver sammen med 2 venner.
 
             <div class="hero-buttons">
               <a href="ommig.html" class="btn-secondary">Se mere om hvem jeg er her!</a>
@@ -107,14 +141,38 @@
         </div>
       
       </section>
+
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+      
+          <!-- Venstre side → Kontakt -->
+          <div class="footer-contact">
+            <p>Kontakt: <a href="mailto:mads94m8@stud.kea.dk">mads94m8@stud.kea.dk</a></p>
+          </div>
+      
+          <!-- Højre side → Social icons -->
+          <div class="footer-socials">
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
+      
+        </div>
+      </footer>
+      
+      
     
     
         <!-- Lottie-web lib -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-    
-        <!-- JS -->
-        <script src="../portfolio/javascript/ommig.js"></script>
-    
+        
       
     <script>
       const introVideo = document.getElementById('intro-video');
@@ -129,9 +187,10 @@
       };
     </script>
 
-
-  <script src="../javascript/podcast.js"></script>
-  <script src="../javascript/logo.js"></script>
+  <script src="./javascript/ommig.js"></script>
+  <script src="./javascript/burger.js"></script>
+  <script src="./javascript/podcast.js"></script>
+  <script src="./javascript/logo.js"></script>
 </body>
 </html>
 

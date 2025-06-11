@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Mit løbeprojekt i juni 🏃‍♂️</title>
+    <title>Portfolio-Website</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
   <header class="site-header">
     <div class="header-inner">
+  
       <div class="site-logo">
         <a href="index.html">
-
-        <img src="images/mplogo.svg" alt="Logo" />
+          <img src="images/mplogo.svg" alt="Logo" />
+        </a>
       </div>
+  
+      <!-- Normal menu (desktop) -->
       <nav>
         <ul>
-          <li><a href="ommig.html">Om mig</a></li>
+          <li><a href="index.html">Forside</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="ommig.html">Om mig</a></li>
         </ul>
       </nav>
-    </div>
-  </header>
+  
+      <!-- Burger menu (mobil) -->
+      <div class="burger-menu" id="burgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  
+    </div> <!-- SLUT på .header-inner -->
+  
+    <!-- Burger navigation (hidden by default) -->
+    <nav class="burger-nav" id="burgerNav">
+      <ul>
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="ommig.html">Om mig</a></li>
+      </ul>
+    </nav>
+  
+  </header> <!-- SLUT på header -->
 
   <section class="hero-section">
     <div class="hero-grid">
       <!-- Venstre side -->
       <div class="hero-text">
         <h1>Hvem er jeg?</h1>
-        <p> Jeg er jo nok lidt ældre end andre studerende, på multimediedesigner, men det betyder jo at jeg har lidt mere livserfaring!
+        <p> Jeg er jo nok lidt ældre end andre studerende, på multimediedesigner, men det betyder jo bare at jeg har lidt mere livserfaring!
           Jeg har tidligere gået på Datalogi på KU, og her har jeg i den grad prøvet krafter med at kode.
           Det var dog primært i F# og C, hvilket jo er en del andereledes en HTML og CSS
           
       </p>
-      <p>Jeg har også fået en smule erfaring fra Javascript derfra, men den største erfaring kommer fra et spil jeg lavede, som en del af min ansøgning jeg i sin tid lavede til et kollegie i København.
-        Du kan selv prøve spillet på knappen nedenfor &darr;
+      <p>Jeg har også fået en smule erfaring fra Javascript derfra, men den største erfaring kommer fra et spil jeg lavede, som en del af en ansøgning jeg i sin tid lavede til et kollegie i København.
+        Du kan selv prøve spillet ved at trykke på knappen nedenfor &darr;
     </p>
         <div class="hero-buttons">
           <a href="https://madspetersegmontspil.netlify.app/
@@ -56,15 +85,13 @@
       <div class="hero-text">
         <h1>Podcasts?</h1>
         <p>I min fritid har jeg en podcast med 2 af mine bedste venner, der hedder N,B OG A.
-          Den handler om Basketball, og vi snakker primært om den amerikanske liga NBA. Podcastens Spotify er linket nederst.
-        </p> 
-  
-        <p>Jeg synes det er super sjovt og utroligt lærerigt at redigere episoderne og lægge et program for hvad der skal tales om.
-          Der er lag til podcasts, bevares, men i realiteten er det jo egentlig bare at sætte sig ned og optage noget, man har på hjerte.
+          Den handler om Basketball, og vi snakker primært om den amerikanske liga NBA.
+          Jeg synes det er super sjovt og utroligt lærerigt at redigere episoderne og lægge et program for hvad der skal tales om. Podcastens Spotify er linket nedenfor.
+          <br><br>Der er lag til podcasts, bevares, men i realiteten er det jo egentlig bare at sætte sig ned og optage noget, man har på hjerte.
         </p>
   
         <p>Derfor har jeg lavet en optager i Javascript, kombineret med 'lydbølgelogo' i Illustrator, som viser dine lydbølger når du snakker og optager hvad du siger.
-          Lige her på siden!
+          Lige her på siden! Prøv det selv ved at trykke på optage knappen til højre. &rarr;
         </p>
   
         <div class="hero-buttons">
@@ -88,9 +115,34 @@
       </div>
     </div> <!-- lukker hero-grid -->
   </section> <!-- lukker hero-section -->
+  <footer class="site-footer">
+    <div class="footer-inner">
   
+      <!-- Venstre side → Kontakt -->
+      <div class="footer-contact">
+        <p>Kontakt: <a href="mailto:mads94m8@stud.kea.dk">mads94m8@stud.kea.dk</a></p>
+      </div>
+  
+      <!-- Højre side → Social icons -->
+      <div class="footer-socials">
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+  
+    </div>
+  </footer>
 
   <script src=".//javascript/podcast.js"></script>
+  <script src="./javascript/burger.js"></script>
+
+
 
 </body>
 </html>
